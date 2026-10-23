@@ -16,6 +16,8 @@ abstract public class Enemy : MonoBehaviour
     public float Movespeed = 5.0f;
     public float Range = 10.0f;
 
+    public Weapon weapon;
+
     public void Damage(float dmg)
     {
         Health -= dmg;
@@ -24,5 +26,8 @@ abstract public class Enemy : MonoBehaviour
             GameObject.Destroy(this);
         } 
     }
+    protected virtual void DoAI()
+    {
 
+    }
 }
