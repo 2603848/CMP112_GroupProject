@@ -26,7 +26,6 @@ public class Bullet : MonoBehaviour
         else
         {
             moveVec = TargetDirection.normalized;
-            UnityEngine.Debug.Log(moveVec);
         }
 
         this.transform.position += moveVec * Speed * Time.deltaTime;
@@ -37,7 +36,7 @@ public class Bullet : MonoBehaviour
         GameObject other = collision.gameObject;
         if (other.GetEntityId() != SpawnedBy)
         {
-           // Destroy(this);
+            Destroy(this.gameObject);
         }
     }
     void Update()
