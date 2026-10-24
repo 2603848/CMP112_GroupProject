@@ -17,28 +17,16 @@ abstract public class Enemy : MonoBehaviour
     public float Movespeed = 5.0f;
     public float Range = 10.0f;
 
-<<<<<<< Updated upstream
-=======
     public SpriteRenderer spriteRenderer;
     public NavMeshAgent agent;
     public EnemyAnimator enemyAnimator;
 
->>>>>>> Stashed changes
     public void Damage(float dmg)
     {
         Health -= dmg;
         if (Health <= 0)
         {
             GameObject.Destroy(this);
-<<<<<<< Updated upstream
         } 
     }
-    protected virtual void DoAI()
-    {
-
-=======
-        }
-        enemyAnimator.SetDamaged();
-    }
->>>>>>> Stashed changes
 }
