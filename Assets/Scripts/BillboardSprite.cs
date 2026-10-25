@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-[ExecuteInEditMode]
+[ExecuteAlways]
 public class BillboardSprite : MonoBehaviour
 {
     // Update is called once per frame
@@ -9,7 +9,7 @@ public class BillboardSprite : MonoBehaviour
     {
         Camera camera = UnityEngine.Camera.main;
 
-        if (!EditorApplication.isPlaying) 
+        if (!EditorApplication.isPlaying && !camera) 
              camera = UnityEngine.Camera.current;
         
         if (camera != null)
