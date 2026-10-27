@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8725603746200637454}
   - component: {fileID: 2453331634619764122}
   - component: {fileID: 5835620443415050478}
-  - component: {fileID: 636143675687715920}
   m_Layer: 5
   m_Name: UI_Weapon
   m_TagString: Untagged
@@ -105,20 +104,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &636143675687715920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 508651863176290187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d1b4adbbc52aac4c95ab9914007ffe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  animator: {fileID: 0}
-  player: {fileID: 0}
 --- !u!1 &540198180688028257
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   camera: {fileID: 4996406720087900349}
+  ViewModel: {fileID: 3038586831788937216}
 --- !u!1 &5006395098437377048
 GameObject:
   m_ObjectHideFlags: 0

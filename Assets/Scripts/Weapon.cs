@@ -23,6 +23,7 @@ public abstract class Weapon : MonoBehaviour
 
     public Bullet BulletPrefab;
 
+
     public bool CanFire()
     {
         return _CanFire;

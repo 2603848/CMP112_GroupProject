@@ -8,6 +8,9 @@ public class PlayerInventory : MonoBehaviour
     Weapon equippedWeapon;
     public Camera camera;
 
+    public WeaponAnimator ViewModel;
+
+
     void Equip()
     {
 
@@ -35,7 +38,13 @@ public class PlayerInventory : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (equippedWeapon != null)
-                equippedWeapon.Fire(this.gameObject, null, camera.transform.position, camera.transform.position + camera.transform.forward);
+            {
+                if (equippedWeapon.CanFire())
+                {
+                    equippedWeapon.Fire(this.gameObject, null, camera.transform.position, camera.transform.position + camera.transform.forward);
+                    ViewModel.IsAttacking();
+                }
+            }
         }
     }
 }
