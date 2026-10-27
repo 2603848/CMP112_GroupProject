@@ -1,3 +1,5 @@
+#region Eren Coded This part
+
 using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
@@ -9,3 +11,4 @@ public class MoveCamera : MonoBehaviour
         transform.position = cameraPosition.position;
     }
 }
+#endregion
