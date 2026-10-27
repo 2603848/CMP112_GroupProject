@@ -21,7 +21,6 @@ abstract public class Enemy : MonoBehaviour, IHasHealth
     public NavMeshAgent agent;
     public EnemyAnimator enemyAnimator;
 
-    // Implementation for IHasHealth
     public void Damage(float dmg)
     {
         Health -= dmg;

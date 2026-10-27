@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+using Unity.AI.Navigation.LowLevel;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -9,6 +11,13 @@ public class GameController : MonoBehaviour
         IN_GAME
     }
     private State _GameState = State.IN_GAME;
+
+    private static int _WorldBoundsSize = 10000;
+    public static int WorldBoundsSize { 
+        get { return _WorldBoundsSize; } 
+        set { _WorldBoundsSize = value;  WorldBounds = new Bounds(new Vector3(), new Vector3(value, value, value)); } 
+    }
+    public static Bounds WorldBounds = new Bounds(new Vector3(),new Vector3(_WorldBoundsSize, _WorldBoundsSize, _WorldBoundsSize));
     
     public State GameState { 
         get {
