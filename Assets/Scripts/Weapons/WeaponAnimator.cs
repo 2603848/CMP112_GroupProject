@@ -15,15 +15,13 @@ public class WeaponAnimator : MonoBehaviour
     {
         if (animator && player)
             animator.SetFloat("Speed", player.linearVelocity.magnitude);
-        if (Input.GetMouseButtonDown(0))
-            IsAttacking();
     }
     void ResetAttacking()
     {
         if (animator)
             animator.SetBool("Attacking", false);
     }
-    void IsAttacking()
+    public void IsAttacking()
     {
         if (animator)
             animator.SetBool("Attacking", true);

@@ -1,3 +1,4 @@
+#region Eren Coded This part
 using System.Collections;
 using UnityEngine;
 
@@ -39,11 +40,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        //Get Movement Input
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
+        //Check if the player is on the ground
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayer);
-
+        
         StateHandler();
 
         rb.linearDamping = grounded ? groundDrag : 0;
@@ -57,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
     #region Movement
     private void StateHandler()
     {
+        //Apply a different speed / accelaration based on if the player is on the ground or in the air
         if (grounded) { state = MovementState.walking; desiredMoveSpeed = walkSpeed; }
         else { state = MovementState.air; }
 
@@ -71,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+        //Calculate the move direction
         Vector3 moveDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
         
         if (grounded)
@@ -88,14 +92,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator SmoothlyLerpMoveSpeed()
+    private IEnumerator SmoothlyLerpMoveSpeed() //Decently self explanatory, lerps the move speed over time so that instead of
+                                                //snapping to the walking/running speed the player smoothly accelarates to it.
     {
         float time = 0f;
         float diff = Mathf.Abs(desiredMoveSpeed - moveSpeed);
         float startVal = moveSpeed;
 
         while (time < diff)
-        {
+        {   
             moveSpeed = Mathf.Lerp(startVal, desiredMoveSpeed, time / diff);
             time += Time.deltaTime * 5f;
             yield return null;
@@ -104,3 +109,4 @@ public class PlayerMovement : MonoBehaviour
     }
     #endregion
 }
+#endregion
