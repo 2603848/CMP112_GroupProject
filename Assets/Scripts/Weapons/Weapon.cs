@@ -23,6 +23,12 @@ public abstract class Weapon : MonoBehaviour
 
     public Bullet BulletPrefab;
 
+    public enum AmmoType
+    {
+        NONE,
+        SHELLS,
+        BULLETS,
+    }
 
     public bool CanFire()
     {
@@ -54,8 +60,6 @@ public abstract class Weapon : MonoBehaviour
             }
             if (IsHitscan == false)
             {
-                Debug.Log("Target pos: " + targetPosition.ToString());
-
                 Bullet spawned = GameObject.Instantiate(BulletPrefab);
                 spawned.transform.position = startPosition;
                 spawned.Target = target;
@@ -77,6 +81,7 @@ public abstract class Weapon : MonoBehaviour
         { 
            _Fire(invoker, target, startPosition, targetPosition);
             Ammo--;
+            Gui.UpdateAmmo(Ammo, MaxAmmo);
         }
     }
     protected void Reload()
