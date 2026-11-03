@@ -27,5 +27,17 @@ public class PlayerStats : MonoBehaviour, IHasHealth
     // Update is called once per frame
     void Update()
     {
+        // if Cancel is pressed
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (GameController.GameState == GameController.State.IN_MENU)
+            {
+                MenuUI.HideMenu();
+            }
+            else if (GameController.GameState != GameController.State.IN_MENU)
+            {
+                MenuUI.CallMenu();
+            }
+        }
     }
 }
