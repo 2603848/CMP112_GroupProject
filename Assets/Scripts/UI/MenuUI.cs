@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class MenuUI : MonoBehaviour
@@ -15,6 +16,11 @@ public class MenuUI : MonoBehaviour
         GameController.GameState = GameController.State.IN_MENU;
         SingletonInstance.canvas.enabled = true;
         SingletonInstance.gameObject.SetActive(true);
+
+        foreach (GameObject g in SingletonInstance.SubPanels)
+        {
+            g.SetActive(false);
+        }
     }
     // Hide the entire UI parent
     public static void HideMenu()
@@ -22,20 +28,25 @@ public class MenuUI : MonoBehaviour
         GameController.GameState = GameController.State.IN_GAME;
         SingletonInstance.canvas.enabled = false;
         SingletonInstance.gameObject.SetActive(false);
-
     }
 
     public void QuitGame()
     {
         Application.Quit();
+        EditorApplication.ExitPlaymode();
     }
-
     // Show options panel
     public void CallOptions()
     {
         foreach (GameObject g in SubPanels)
             g.SetActive(false);
         OptionsPanel.SetActive(true);
+
+        for (int i = 0; i < OptionsPanel.transform.childCount; i++)
+        {
+            GameObject g = OptionsPanel.transform.GetChild(i).gameObject;
+            g.SetActive(true);
+        }
     }
     // Hide options panel
     public void HideOptions()

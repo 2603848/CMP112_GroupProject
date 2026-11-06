@@ -21,10 +21,6 @@ public class PlayerCam : MonoBehaviour
     private void Start()
     {
         cam = GetComponent<Camera>();
-
-        //Locks the cursor inside the game window
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     private void Update()

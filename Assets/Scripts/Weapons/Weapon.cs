@@ -77,6 +77,10 @@ public abstract class Weapon : MonoBehaviour
 
     public void Fire(GameObject invoker, GameObject target, Vector3 startPosition, Vector3 targetPosition)
     {
+        // Don't perform action if paused
+        if (GameController.Paused)
+            return;
+
         if (Ammo > 0)
         { 
            _Fire(invoker, target, startPosition, targetPosition);

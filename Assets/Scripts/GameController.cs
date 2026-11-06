@@ -1,4 +1,6 @@
 using JetBrains.Annotations;
+using System.Collections;
+using System.Collections.Generic;
 using Unity.AI.Navigation.LowLevel;
 using UnityEngine;
 using UnityEngine.XR;
@@ -11,7 +13,7 @@ public class GameController
         IN_GAME
     }
 
-    private static bool Paused = false;
+    public static bool Paused { get; private set; }
 
     private static State _GameState = State.IN_GAME;
 
@@ -35,6 +37,10 @@ public class GameController
     private static void Pause(bool paused)
     {
         Paused = paused;
+        if (Paused)
+            UnityEngine.Time.timeScale = 0;
+        else
+            UnityEngine.Time.timeScale = 1;
     }
 
     static void SetState(State to)
