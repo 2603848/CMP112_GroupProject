@@ -39,9 +39,9 @@ public class ResolutionDropdown : MonoBehaviour
         Dropdown.AddOptions(options);
         Dropdown.value = selectedIndex;
     }
-    public void DropdownValueChanged(Int32 change)
+    public void DropdownValueChanged(Int32 id)
     {
-        Resolution res = Screen.resolutions[change];
+        Resolution res = Screen.resolutions[Dropdown.value];
         Screen.SetResolution(res.width, res.height, FullScreenMode.MaximizedWindow, res.refreshRateRatio);
     }
 
