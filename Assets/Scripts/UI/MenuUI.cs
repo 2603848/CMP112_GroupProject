@@ -33,7 +33,9 @@ public class MenuUI : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+#if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
+#endif
     }
     // Show options panel
     public void CallOptions()
