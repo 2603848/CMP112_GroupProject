@@ -33,7 +33,7 @@ public class ResolutionDropdown : MonoBehaviour
         // set the resolution to the previous setting
         // otherwise, we're looking for the default resolution
         string DesiredResolution = PlayerPrefs.HasKey("resolution") ? PlayerPrefs.GetString("resolution") : GetResolutionString(Screen.currentResolution);
-
+        
         for (int i = 0; i < Screen.resolutions.Length; i++)
         {
             Resolution res = Screen.resolutions[i];
@@ -50,6 +50,7 @@ public class ResolutionDropdown : MonoBehaviour
         Dropdown.value = selectedIndex;
         // Save the currently set resolution
         PlayerPrefs.SetString("resolution", GetResolutionString(Screen.resolutions[selectedIndex]));
+        Screen.SetResolution(Screen.resolutions[selectedIndex].width,Screen.resolutions[selectedIndex].height,false);
     }
     public void DropdownValueChanged(Int32 id)
     {
