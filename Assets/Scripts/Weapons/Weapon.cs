@@ -23,6 +23,8 @@ public abstract class Weapon : MonoBehaviour
 
     public Bullet BulletPrefab;
 
+    public GameObject BulletSpawnPoint;
+
     public enum AmmoType
     {
         NONE,
@@ -82,10 +84,16 @@ public abstract class Weapon : MonoBehaviour
             return;
 
         if (Ammo > 0)
-        { 
-           _Fire(invoker, target, startPosition, targetPosition);
+        {
+            _Fire(invoker, target, startPosition, targetPosition);
             Ammo--;
         }
+    }
+    // Overload that uses the startPosition set inside this Weapon
+    public void Fire(GameObject invoker, GameObject target, Vector3 targetPosition)
+    {
+        if (BulletSpawnPoint != null)
+            Fire(invoker, target, BulletSpawnPoint.transform.position, targetPosition);
     }
     protected void Reload()
     {
