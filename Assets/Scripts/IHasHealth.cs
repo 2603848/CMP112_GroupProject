@@ -1,4 +1,6 @@
+using UnityEngine;
+
 public interface IHasHealth
 {
-    public void Damage(float damage);
+    public void Damage(float dmg);
 }

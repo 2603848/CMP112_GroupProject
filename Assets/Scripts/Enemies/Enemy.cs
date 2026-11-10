@@ -1,4 +1,3 @@
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -24,10 +23,10 @@ abstract public class Enemy : MonoBehaviour, IHasHealth
     public void Damage(float dmg)
     {
         Health -= dmg;
+        Debug.Log(Health);
         if (Health <= 0)
         {
-            GameObject.Destroy(this);
-        }
-        enemyAnimator.SetDamaged();
+            GameObject.Destroy(this.gameObject);
+        } 
     }
 }
