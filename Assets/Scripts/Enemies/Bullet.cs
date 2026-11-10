@@ -15,6 +15,8 @@ public class Bullet : MonoBehaviour
     public float Speed = 5.0f;
     public float damage = 12.0f;
 
+    public BulletAnimator animator;
+
     protected virtual void Move()
     {
         Vector3 moveVec = new Vector3(0, 0, 0);
@@ -40,7 +42,14 @@ public class Bullet : MonoBehaviour
             {
                 otherHealth.Damage(damage);
             }
-            Destroy(this.gameObject);
+            float time = 0;
+            if (animator != null)
+                time = animator.GetDestroyAnimationTime();
+            Destroy(this.gameObject, time);
+            animator.DoDestroyAnimation();
+            // Destroy the collider immediately so that we can't re-trigger the damage
+            Destroy(collision.thisCollider);
+
         }
     }
     void FixedUpdate()
