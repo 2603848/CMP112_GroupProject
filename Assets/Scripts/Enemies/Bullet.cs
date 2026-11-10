@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     public Vector3 TargetDirection = new Vector3(0,0,0);
 
     public float Speed = 5.0f;
-
+    public float damage = 12.0f;
 
     protected virtual void Move()
     {
@@ -35,10 +35,15 @@ public class Bullet : MonoBehaviour
         GameObject other = collision.gameObject;
         if (other.GetEntityId() != SpawnedBy)
         {
+            IHasHealth otherHealth = other.GetComponent<IHasHealth>();
+            if (otherHealth != null)
+            {
+                otherHealth.Damage(damage);
+            }
             Destroy(this.gameObject);
         }
     }
-    void Update()
+    void FixedUpdate()
     {
         Move();
     }
