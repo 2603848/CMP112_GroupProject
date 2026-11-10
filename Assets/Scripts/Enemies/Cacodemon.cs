@@ -15,7 +15,7 @@ public class Cacodemon : Enemy
     {
         if (weapon.CanFire() && targetFinder.Target != null && Vector3.Distance(targetFinder.Target.transform.position,transform.position) < Range)
         {
-            weapon.Fire(this.gameObject, null, this.transform.position, targetFinder.Target.transform.position);
+            weapon.Fire(this.gameObject, null, this.transform.position, targetFinder.Target.GetComponent<Collider>().bounds.center);
             enemyAnimator.Attacking();
         }
     }

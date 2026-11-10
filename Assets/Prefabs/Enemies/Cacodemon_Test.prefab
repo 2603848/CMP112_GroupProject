@@ -145,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2527760531984040676}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.98015016, z: -0, w: 0.19825667}
+  m_LocalRotation: {x: -0, y: -0.9896062, z: -0, w: 0.1438043}
   m_LocalPosition: {x: 0, y: 7.67725, z: -2.4825602}
   m_LocalScale: {x: 18.942778, y: 18.942778, z: 18.942778}
   m_ConstrainProportionsScale: 0
@@ -333,6 +333,14 @@ PrefabInstance:
     - target: {fileID: 407697808855788374, guid: c5233a0f9b53d8c45abba1d20a3184f7, type: 3}
       propertyPath: m_Name
       value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438403340890742884, guid: c5233a0f9b53d8c45abba1d20a3184f7, type: 3}
+      propertyPath: WeaponCD
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438403340890742884, guid: c5233a0f9b53d8c45abba1d20a3184f7, type: 3}
+      propertyPath: ReloadTime
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4975470963499924931, guid: c5233a0f9b53d8c45abba1d20a3184f7, type: 3}
       propertyPath: m_LocalPosition.x

@@ -5,6 +5,8 @@ public class EnemyAnimator : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Animator animator;
+
+    public bool IsTargeting = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,11 +19,14 @@ public class EnemyAnimator : MonoBehaviour
         if (animator && agent)
         {
             animator.SetFloat("Speed",agent.velocity.magnitude);
+            //animator.SetBool("Targeting", IsTargeting);
+
         }
     }
     public void Attacking()
     {
         Debug.Log("attacking");
+        Debug.Log(animator.GetBool("Attacking"));
         animator.SetBool("Attacking", true);
     }
     public void ResetAttackingAnim()
