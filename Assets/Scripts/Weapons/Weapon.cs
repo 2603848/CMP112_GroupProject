@@ -85,7 +85,6 @@ public abstract class Weapon : MonoBehaviour
         { 
            _Fire(invoker, target, startPosition, targetPosition);
             Ammo--;
-            Gui.UpdateAmmo(Ammo, MaxAmmo);
         }
     }
     protected void Reload()
