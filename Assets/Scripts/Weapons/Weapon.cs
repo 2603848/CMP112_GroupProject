@@ -46,13 +46,15 @@ public abstract class Weapon : MonoBehaviour
     {
         if (CanFire())
         {
+            // If it is a hitscan weapon, immediately apply the damage
             if (IsHitscan == true)
             {
                 RaycastHit hit;
                 if (Physics.Raycast(startPosition, (targetPosition - startPosition).normalized, out hit, HitscanMaxDist, HitLayers))
                 {
-                    GameObject collided = hit.collider.transform.parent.gameObject;
-                    Debug.Log(collided.name);
+
+                    GameObject collided = hit.collider.transform.gameObject;
+                    // If the object is something that can be damaged, apply the damage
                     IHasHealth health = collided.GetComponent<IHasHealth>();
                     if (health != null)
                     {
@@ -63,9 +65,18 @@ public abstract class Weapon : MonoBehaviour
             if (IsHitscan == false)
             {
                 Bullet spawned = GameObject.Instantiate(BulletPrefab);
+                
+                spawned.transform.rotation = Quaternion.identity;
                 spawned.transform.position = startPosition;
-                spawned.Target = target;
+                
+                // Set the speed of the bullet to move to the target's position
                 spawned.TargetDirection = (targetPosition - startPosition).normalized;
+                spawned.GetComponent<Rigidbody>().linearVelocity = spawned.TargetDirection * spawned.Speed;
+
+                // Ignore the collision between the bullet and this object's collider
+                Physics.IgnoreCollision(spawned.GetComponent<Collider>(), transform.parent.GetComponent<Collider>());
+                
+                spawned.Target = target;
                 spawned.SpawnedBy = invoker.GetEntityId();
             }
             _CanFire = false;

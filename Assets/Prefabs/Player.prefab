@@ -336,6 +336,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   HitscanDamage: 10
   BulletPrefab: {fileID: 0}
+  BulletSpawnPoint: {fileID: 0}
 --- !u!1 &4362237082536985318
 GameObject:
   m_ObjectHideFlags: 0

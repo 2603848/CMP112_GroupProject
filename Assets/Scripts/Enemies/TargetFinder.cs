@@ -69,7 +69,7 @@ public class TargetFinder : MonoBehaviour
     {
         if (Target != null)
         {
-            if (enemy.Range < GetDistToTarget())
+            if (TargetDistanceFromTarget < GetDistToTarget())
             {
                 agent.SetDestination(Target.transform.position);
                 agent.isStopped = false;
