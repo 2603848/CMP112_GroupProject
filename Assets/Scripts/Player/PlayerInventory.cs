@@ -10,12 +10,34 @@ public class PlayerInventory : MonoBehaviour
 
     public WeaponAnimator ViewModel;
 
+    bool Reloading = false;
 
     void Equip()
     {
 
     }
+    void ReloadWeapon()
+    {
+        equippedWeapon.ReloadWeapon();
+    }
+    void Reload()
+    {
+        foreach (AnimationClip clip in ViewModel.animator.runtimeAnimatorController.animationClips)
+        {
+            // If we've found the correct clip, set the animator to reload
+            if (clip.name == "Reload")
+            {
+                ViewModel.animator.SetBool("Reloading", true);
+                // Add the ammo only when the animation finishes
+                Invoke(nameof(ReloadWeapon), clip.length);
+            }
+        }
+    }
 
+    bool IsReloading()
+    {
+        return ViewModel.animator.GetBool("Reloading");
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,7 +59,11 @@ public class PlayerInventory : MonoBehaviour
     {
         if (GameController.Paused == false)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKey(KeyCode.R) && !IsReloading())
+            {
+                Reload();
+            }
+            if (Input.GetMouseButtonDown(0) && !IsReloading())
             {
                 if (equippedWeapon != null)
                 {
@@ -45,7 +71,6 @@ public class PlayerInventory : MonoBehaviour
                     {
                         equippedWeapon.Fire(this.gameObject, null, camera.transform.position, camera.transform.position + camera.transform.forward);
                         ViewModel.IsAttacking();
-                        Gui.UpdateAmmo(equippedWeapon.Ammo, equippedWeapon.MaxAmmo);
                     }
                 }
             }

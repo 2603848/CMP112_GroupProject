@@ -1,9 +1,18 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Profiling.HierarchyFrameDataView;
 
 public abstract class Weapon : MonoBehaviour
 {
-    public int Ammo = 10;
+    public int _Ammo = 10;
+    public int Ammo
+    {
+        get { return _Ammo; }
+        set { _Ammo = value;
+            Gui.UpdateAmmo(Ammo, MaxAmmo);
+        }
+    }
+
     public int MaxAmmo = 10;
 
     public float ReloadTime = 1;
@@ -110,6 +119,9 @@ public abstract class Weapon : MonoBehaviour
     {
         this.Invoke(nameof(_Reload),ReloadTime);
     }
-
+    public void ReloadWeapon()
+    {
+        Ammo = MaxAmmo;
+    }
 
 }

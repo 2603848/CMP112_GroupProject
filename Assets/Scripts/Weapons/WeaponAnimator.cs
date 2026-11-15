@@ -26,4 +26,9 @@ public class WeaponAnimator : MonoBehaviour
         if (animator)
             animator.SetBool("Attacking", true);
     }
+    public void ResetReloading()
+    {
+        if (animator)
+            animator.SetBool("Reloading", false);
+    }
 }
