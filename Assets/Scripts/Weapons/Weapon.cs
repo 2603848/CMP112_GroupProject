@@ -4,15 +4,7 @@ using static UnityEditor.Profiling.HierarchyFrameDataView;
 
 public abstract class Weapon : MonoBehaviour
 {
-    public int _Ammo = 10;
-    public int Ammo
-    {
-        get { return _Ammo; }
-        set { _Ammo = value;
-            Gui.UpdateAmmo(Ammo, MaxAmmo);
-        }
-    }
-
+    public int Ammo = 10;
     public int MaxAmmo = 10;
 
     public float ReloadTime = 1;

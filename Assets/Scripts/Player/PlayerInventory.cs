@@ -19,6 +19,7 @@ public class PlayerInventory : MonoBehaviour
     void ReloadWeapon()
     {
         equippedWeapon.ReloadWeapon();
+        Gui.UpdateAmmo(equippedWeapon.Ammo, equippedWeapon.MaxAmmo);
     }
     void Reload()
     {
@@ -71,6 +72,7 @@ public class PlayerInventory : MonoBehaviour
                     {
                         equippedWeapon.Fire(this.gameObject, null, camera.transform.position, camera.transform.position + camera.transform.forward);
                         ViewModel.IsAttacking();
+                        Gui.UpdateAmmo(equippedWeapon.Ammo, equippedWeapon.MaxAmmo);
                     }
                 }
             }
