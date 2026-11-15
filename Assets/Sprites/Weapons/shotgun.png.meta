@@ -101,7 +101,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -112,7 +112,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5bd09e6173544f40bbf5ae99d88b654
+      spriteID: 8d474f0ec5400844caa4f3e9ac549214
       internalID: 481708902
       vertices: []
       indices: 
@@ -123,7 +123,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -134,7 +134,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3de3eedbff4db954e9dc45316280faf3
+      spriteID: 9128c6fd8576d6a4c8b992a74b5dd38e
       internalID: -497291240
       vertices: []
       indices: 
@@ -145,7 +145,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 128
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -156,7 +156,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e1f351a357ad164a9faaa4f19bb57fc
+      spriteID: 06e95301ae1d22549a2bf8e617a61240
       internalID: -853134832
       vertices: []
       indices: 
@@ -167,7 +167,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 128
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -178,7 +178,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 783a874acbaf45f4f9591105d9377436
+      spriteID: 6be83a7393169ff4c97dadc7af6b44a8
       internalID: -935289655
       vertices: []
       indices: 
@@ -189,6 +189,28 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431e0fe7856293a4e851de6376357cf0
+      internalID: -1229425056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shotgun_5
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 128
         width: 64
         height: 64
@@ -200,29 +222,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b6612df86d6b9a44bbf9e2482918232
-      internalID: -1229425056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1e86fe5cd80104499fc8325e6e30183
+      spriteID: 1b710f8661d20ea4fac7e882d70fb33c
       internalID: -21283256
       vertices: []
       indices: 
@@ -233,6 +233,94 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51bd08947e44c114483ea581dc1afe4c
+      internalID: 287300197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shotgun_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d6c7ef7f4490c40b5ea87cf814930a
+      internalID: 1522158323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shotgun_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215f31ec7541ce949938058b00b77705
+      internalID: -325188515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shotgun_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d521c75d79800254ebd3b2298c78d2ee
+      internalID: -1836060601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shotgun_10
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 64
         width: 64
         height: 64
@@ -244,14 +332,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f4c7a7382a125a4290c00afd2f7fa20
-      internalID: 287300197
+      spriteID: 0b8f951c3a724cc45acfd5f4933548b9
+      internalID: 1630456778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun_7
+      name: shotgun_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2045f8cb9d1e36b43ad2cc23e880e283
+      internalID: -1355754011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shotgun_12
       rect:
         serializedVersion: 2
         x: 128
@@ -266,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b195076c969295e428cb7502f721942c
-      internalID: 1522158323
+      spriteID: 46d86c7629d35f7478b3943576b653a1
+      internalID: 337408559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun_8
+      name: shotgun_13
       rect:
         serializedVersion: 2
         x: 192
@@ -288,36 +398,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60af9b31c97cb544aa56e1b7d5066116
-      internalID: -325188515
+      spriteID: e775053fc43134e4eb669b8deedb0c74
+      internalID: 1889071340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun_9
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 666545b3d6134ce47941d5757f1d3dfc
-      internalID: -1836060601
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun_10
+      name: shotgun_14
       rect:
         serializedVersion: 2
         x: 0
@@ -332,14 +420,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8341c1c5687ad884d941666f5d8b4506
-      internalID: 1630456778
+      spriteID: 85e854ccbca218d428a0f6efc9875c8e
+      internalID: -1408753313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun_11
+      name: shotgun_15
       rect:
         serializedVersion: 2
         x: 64
@@ -354,14 +442,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2965fd44a5be7943aff1d0adb7ca6f1
-      internalID: -1355754011
+      spriteID: cff9c0e593c8a184fb5ed74d79060e4a
+      internalID: -1196400446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun_12
+      name: shotgun_16
       rect:
         serializedVersion: 2
         x: 128
@@ -376,14 +464,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1eb44397f00b214e93f3c0d7286f1d9
-      internalID: 337408559
+      spriteID: 45633b2ec09882241b1fc1d227918258
+      internalID: -1187540874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun_13
+      name: shotgun_17
       rect:
         serializedVersion: 2
         x: 192
@@ -398,14 +486,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8700734c62d5aa24eab6e6d5402f690a
-      internalID: 1889071340
+      spriteID: 39bdb933e6d57b94d83d69b2f38e46a9
+      internalID: -444159840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun_14
+      name: shotgun_18
       rect:
         serializedVersion: 2
         x: 256
@@ -420,8 +508,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cc3cbbc6da1bd8408c5ce1e60fb1de2
-      internalID: -1408753313
+      spriteID: 9b8ccc561d67f094d9f54ef2ded92c71
+      internalID: 1845095769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shotgun_19
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cbea30569466d4fb536e99b975468a
+      internalID: 2001238011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shotgun_20
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06f7faca072b0e44afecb717daec3c2
+      internalID: -1897649375
       vertices: []
       indices: 
       edges: []
@@ -451,7 +583,13 @@ TextureImporter:
       shotgun_12: 337408559
       shotgun_13: 1889071340
       shotgun_14: -1408753313
+      shotgun_15: -1196400446
+      shotgun_16: -1187540874
+      shotgun_17: -444159840
+      shotgun_18: 1845095769
+      shotgun_19: 2001238011
       shotgun_2: -853134832
+      shotgun_20: -1897649375
       shotgun_3: -935289655
       shotgun_4: -1229425056
       shotgun_5: -21283256

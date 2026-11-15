@@ -1,3 +1,4 @@
+#region Eren Coded This part
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -20,9 +21,6 @@ public class PlayerCam : MonoBehaviour
     private void Start()
     {
         cam = GetComponent<Camera>();
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     private void Update()
@@ -33,9 +31,11 @@ public class PlayerCam : MonoBehaviour
     #region MouseRotation
     private void MouseRotation() 
     { 
+        //Get looking input (mouse input)
         float mouseX = Input.GetAxis("Mouse X") * sensX * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensY * Time.deltaTime;
-
+        //There is technically no point to calculating y rotation as sensY is permanently set to 0.
+        //However good to have incase it is needed in the future.
         targetYRotation += mouseX;
         targetXRotation -= mouseY;
         targetXRotation = Mathf.Clamp(targetXRotation, -90f, 90f);
@@ -51,3 +51,4 @@ public class PlayerCam : MonoBehaviour
     }
     #endregion
 }
+#endregion

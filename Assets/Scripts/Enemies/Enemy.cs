@@ -1,4 +1,3 @@
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -25,8 +24,17 @@ abstract public class Enemy : MonoBehaviour, IHasHealth
     {
         Health -= dmg;
         Debug.Log(Health);
+        if (Health > 0 && enemyAnimator != null)
+        {
+            enemyAnimator.SetDamaged();
+        }
         if (Health <= 0)
         {
+            enemyAnimator.SetDead();
+
+            // Remove the sprite renderer component (previously a child of this gameobject) so that we keep the body around and the animator still runs the death animation
+            spriteRenderer.gameObject.transform.parent = null;
+            // and then destroy this object 
             GameObject.Destroy(this.gameObject);
         } 
     }

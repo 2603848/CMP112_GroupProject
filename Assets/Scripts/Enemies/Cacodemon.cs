@@ -13,9 +13,15 @@ public class Cacodemon : Enemy
     // Update is called once per frame
     void Update()
     {
+        if (targetFinder.Target != null)
+        {
+            UnityEngine.Debug.Log(Vector3.Distance(targetFinder.Target.transform.position, transform.position));
+        }
         if (weapon.CanFire() && targetFinder.Target != null && Vector3.Distance(targetFinder.Target.transform.position,transform.position) < Range)
         {
-            weapon.Fire(this.gameObject, null, this.transform.position, targetFinder.Target.transform.position);
+            // Fire weapon at the center of the player
+            weapon.Fire(this.gameObject, null, targetFinder.Target.GetComponent<Collider>().bounds.center);
+            // Set the animator state
             enemyAnimator.Attacking();
         }
     }

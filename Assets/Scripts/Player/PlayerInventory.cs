@@ -10,12 +10,35 @@ public class PlayerInventory : MonoBehaviour
 
     public WeaponAnimator ViewModel;
 
+    bool Reloading = false;
 
     void Equip()
     {
 
     }
+    void ReloadWeapon()
+    {
+        equippedWeapon.ReloadWeapon();
+        Gui.UpdateAmmo(equippedWeapon.Ammo, equippedWeapon.MaxAmmo);
+    }
+    void Reload()
+    {
+        foreach (AnimationClip clip in ViewModel.animator.runtimeAnimatorController.animationClips)
+        {
+            // If we've found the correct clip, set the animator to reload
+            if (clip.name == "Reload")
+            {
+                ViewModel.animator.SetBool("Reloading", true);
+                // Add the ammo only when the animation finishes
+                Invoke(nameof(ReloadWeapon), clip.length);
+            }
+        }
+    }
 
+    bool IsReloading()
+    {
+        return ViewModel.animator.GetBool("Reloading");
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,14 +58,22 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (GameController.Paused == false)
         {
-            if (equippedWeapon != null)
+            if (Input.GetKey(KeyCode.R) && !IsReloading())
             {
-                if (equippedWeapon.CanFire())
+                Reload();
+            }
+            if (Input.GetMouseButtonDown(0) && !IsReloading())
+            {
+                if (equippedWeapon != null)
                 {
-                    equippedWeapon.Fire(this.gameObject, null, camera.transform.position, camera.transform.position + camera.transform.forward);
-                    ViewModel.IsAttacking();
+                    if (equippedWeapon.CanFire())
+                    {
+                        equippedWeapon.Fire(this.gameObject, null, camera.transform.position, camera.transform.position + camera.transform.forward);
+                        ViewModel.IsAttacking();
+                        Gui.UpdateAmmo(equippedWeapon.Ammo, equippedWeapon.MaxAmmo);
+                    }
                 }
             }
         }
