@@ -3,6 +3,7 @@ using UnityEngine;
 public class Cacodemon : Enemy
 {
     TargetFinder targetFinder;
+    public Weapon weapon;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,9 +13,10 @@ public class Cacodemon : Enemy
     // Update is called once per frame
     void Update()
     {
-        if (weapon.CanFire() && targetFinder.Target != null)
+        if (weapon.CanFire() && targetFinder.Target != null && Vector3.Distance(targetFinder.Target.transform.position,transform.position) < Range)
         {
             weapon.Fire(this.gameObject, null, this.transform.position, targetFinder.Target.transform.position);
+            enemyAnimator.Attacking();
         }
     }
 }

@@ -1,9 +1,10 @@
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using UnityEngine.AI;
 
 // NOTE: base class, to be inherited from
 [RequireComponent(typeof(TargetFinder), typeof(CharacterController))]
-abstract public class Enemy : MonoBehaviour
+abstract public class Enemy : MonoBehaviour, IHasHealth
 {
     public enum EnemyState
     {
@@ -16,18 +17,17 @@ abstract public class Enemy : MonoBehaviour
     public float Movespeed = 5.0f;
     public float Range = 10.0f;
 
-    public Weapon weapon;
+    public SpriteRenderer spriteRenderer;
+    public NavMeshAgent agent;
+    public EnemyAnimator enemyAnimator;
 
     public void Damage(float dmg)
     {
         Health -= dmg;
+        Debug.Log(Health);
         if (Health <= 0)
         {
-            GameObject.Destroy(this);
+            GameObject.Destroy(this.gameObject);
         } 
-    }
-    protected virtual void DoAI()
-    {
-
     }
 }
