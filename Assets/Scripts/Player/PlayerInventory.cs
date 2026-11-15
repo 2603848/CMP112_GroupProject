@@ -35,14 +35,18 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (GameController.Paused == false)
         {
-            if (equippedWeapon != null)
+            if (Input.GetMouseButtonDown(0))
             {
-                if (equippedWeapon.CanFire())
+                if (equippedWeapon != null)
                 {
-                    equippedWeapon.Fire(this.gameObject, null, camera.transform.position, camera.transform.position + camera.transform.forward);
-                    ViewModel.IsAttacking();
+                    if (equippedWeapon.CanFire())
+                    {
+                        equippedWeapon.Fire(this.gameObject, null, camera.transform.position, camera.transform.position + camera.transform.forward);
+                        ViewModel.IsAttacking();
+                        Gui.UpdateAmmo(equippedWeapon.Ammo, equippedWeapon.MaxAmmo);
+                    }
                 }
             }
         }
