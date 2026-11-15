@@ -42,4 +42,8 @@ public class EnemyAnimator : MonoBehaviour
     {
         animator.SetBool("Damaged", true);
     }
+    public void SetDead()
+    {
+        animator.SetBool("Dead", true);
+    }
 }
