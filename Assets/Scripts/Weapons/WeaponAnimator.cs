@@ -2,31 +2,29 @@ using UnityEngine;
 
 public class WeaponAnimator : MonoBehaviour
 {
-    public Animator weapon;
+    public Animator animator;
     public Rigidbody player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player && weapon)
-            weapon.SetFloat("Speed", player.linearVelocity.magnitude);
-        if (Input.GetMouseButtonDown(0))
-            JustFired();
+        if (animator && player)
+            animator.SetFloat("Speed", player.linearVelocity.magnitude);
     }
-    void ResetFiringSwitch()
+    void ResetAttacking()
     {
-        if (weapon)
-            weapon.SetBool("Attacking", false);
+        if (animator)
+            animator.SetBool("Attacking", false);
     }
-    void JustFired()
+    public void IsAttacking()
     {
-        if (weapon)
-            weapon.SetBool("Attacking", true);
+        if (animator)
+            animator.SetBool("Attacking", true);
     }
     public void ResetReloading()
     {

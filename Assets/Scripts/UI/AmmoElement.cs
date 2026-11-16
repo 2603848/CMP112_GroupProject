@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,9 +16,19 @@ public class AmmoElement : MonoBehaviour
 
     public static void UpdateAmmoType(Weapon.AmmoType ammoType)
     {
+        // If our weapon has ammo type NONE, it needs no ammo element (it does not use ammo)
+        if (ammoType == Weapon.AmmoType.NONE)
+            SingletonReference.gameObject.SetActive(false);
+        else
+            SingletonReference.gameObject.SetActive(true);
+
+        // Get the sprite associated with the ammo type
         AmmoSprite sprite = SingletonReference.AmmoTypeSprites.Find(
-            w  => { return w.AmmoType == ammoType; 
+            w =>
+            {
+                return w.AmmoType == ammoType;
             });
+
         SingletonReference.AmmoTypeImage.sprite = sprite.UIAmmoSprite;
     }
     public static void UpdateAmmo(int ammo, int maxAmmo)
