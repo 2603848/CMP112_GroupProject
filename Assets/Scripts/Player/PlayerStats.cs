@@ -12,7 +12,7 @@ public class PlayerStats : MonoBehaviour, IHasHealth
         }
     }
 
-    public void Damage(float dmg)
+    public void Damage(float dmg, GameObject source)
     {
         Hp -= dmg;
     }

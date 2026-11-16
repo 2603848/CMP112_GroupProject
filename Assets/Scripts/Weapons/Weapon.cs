@@ -63,7 +63,7 @@ public abstract class Weapon : MonoBehaviour
                     IHasHealth health = collided.GetComponent<IHasHealth>();
                     if (health != null)
                     {
-                        health.Damage(HitscanDamage);
+                        health.Damage(HitscanDamage, this.transform.parent.parent.gameObject);
                     }
                 }
             }
@@ -82,7 +82,7 @@ public abstract class Weapon : MonoBehaviour
                 Physics.IgnoreCollision(spawned.GetComponent<Collider>(), transform.parent.GetComponent<Collider>());
                 
                 spawned.Target = target;
-                spawned.SpawnedBy = invoker.GetEntityId();
+                spawned.SpawnedBy = invoker;
             }
             _CanFire = false;
             this.Invoke(nameof(WeaponHasCooledDown), WeaponCD);

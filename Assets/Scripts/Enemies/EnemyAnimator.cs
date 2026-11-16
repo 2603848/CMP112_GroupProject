@@ -25,8 +25,6 @@ public class EnemyAnimator : MonoBehaviour
     }
     public void Attacking()
     {
-        Debug.Log("attacking");
-        Debug.Log(animator.GetBool("Attacking"));
         animator.SetBool("Attacking", true);
     }
     public void ResetAttackingAnim()

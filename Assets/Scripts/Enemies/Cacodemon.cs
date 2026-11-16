@@ -13,10 +13,6 @@ public class Cacodemon : Enemy
     // Update is called once per frame
     void Update()
     {
-        if (targetFinder.Target != null)
-        {
-            UnityEngine.Debug.Log(Vector3.Distance(targetFinder.Target.transform.position, transform.position));
-        }
         if (weapon.CanFire() && targetFinder.Target != null && Vector3.Distance(targetFinder.Target.transform.position,transform.position) < Range)
         {
             // Fire weapon at the center of the player

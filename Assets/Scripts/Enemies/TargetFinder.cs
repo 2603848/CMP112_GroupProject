@@ -31,9 +31,14 @@ public class TargetFinder : MonoBehaviour
             return float.MaxValue;
         return Vector3.Distance(this.transform.position, Target.transform.position);
     }
-
+    public void SetTarget(GameObject target)
+    {
+        Target = target;
+    }
+    
     private GameObject FindTarget(float MaxDistance)
     {
+        // Find player object, and if closer than the max distance for searching, target them
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
         float closestObjectDistance = float.MaxValue;
@@ -67,6 +72,7 @@ public class TargetFinder : MonoBehaviour
     }
     private void MoveToEnemy()
     {
+        // if we have a target, pathfind to it
         if (Target != null)
         {
             if (TargetDistanceFromTarget < GetDistToTarget())

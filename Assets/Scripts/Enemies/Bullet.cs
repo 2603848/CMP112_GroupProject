@@ -8,7 +8,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(BoundsChecker))]
 public class Bullet : MonoBehaviour
 {
-    public EntityId SpawnedBy;
+    public GameObject SpawnedBy;
     public GameObject Target = null;
     public Vector3 TargetDirection = new Vector3(0,0,0);
 
@@ -32,13 +32,13 @@ public class Bullet : MonoBehaviour
     {
         // if we are colliding with an object other than the one spawning it
         GameObject other = collision.gameObject;
-        if (other.GetEntityId() != SpawnedBy)
+        if (other != SpawnedBy)
         {
             // Are we targeting something that can be damaged?
             IHasHealth otherHealth = other.GetComponent<IHasHealth>();
             if (otherHealth != null)
             {
-                otherHealth.Damage(damage);
+                otherHealth.Damage(damage, SpawnedBy);
             }
             // Destroy the bullet after it's finished playing its destruction animation
             float time = 0;

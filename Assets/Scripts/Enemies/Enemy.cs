@@ -20,12 +20,17 @@ abstract public class Enemy : MonoBehaviour, IHasHealth
     public NavMeshAgent agent;
     public EnemyAnimator enemyAnimator;
 
-    public void Damage(float dmg)
+    public void Damage(float dmg, GameObject source)
     {
         Health -= dmg;
-        Debug.Log(Health);
         if (Health > 0 && enemyAnimator != null)
         {
+            TargetFinder targetFinder = GetComponent<TargetFinder>();
+            if (targetFinder.Target == null || targetFinder?.Target.tag != "Player")
+            {
+                targetFinder.SetTarget(source);
+            }
+
             enemyAnimator.SetDamaged();
         }
         if (Health <= 0)
@@ -36,6 +41,8 @@ abstract public class Enemy : MonoBehaviour, IHasHealth
             spriteRenderer.gameObject.transform.parent = null;
             // and then destroy this object 
             GameObject.Destroy(this.gameObject);
-        } 
+        }
+
+        
     }
 }
