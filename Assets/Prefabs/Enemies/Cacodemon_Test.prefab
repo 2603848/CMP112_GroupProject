@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2150058058899637816}
   - component: {fileID: 5870621177824201011}
   - component: {fileID: 8008115004025910692}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cacodemon_Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 6026647179775564302}
   - component: {fileID: 4741112907502588458}
   - component: {fileID: 2832107116557497639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3398251885310874300}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,6 +325,10 @@ PrefabInstance:
     - target: {fileID: 407697808855788374, guid: c5233a0f9b53d8c45abba1d20a3184f7, type: 3}
       propertyPath: m_Name
       value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 407697808855788374, guid: c5233a0f9b53d8c45abba1d20a3184f7, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3438403340890742884, guid: c5233a0f9b53d8c45abba1d20a3184f7, type: 3}
       propertyPath: WeaponCD
