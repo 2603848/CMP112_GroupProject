@@ -1,3 +1,4 @@
+using Unity.AI.Navigation;
 using UnityEngine;
 
 //Parts of this code have been taken from https://www.youtube.com/watch?v=YZNxy2kabfI
@@ -8,16 +9,21 @@ public class LevelGenerator : MonoBehaviour
     public Texture2D levelPlan;
     //floor colour is 323c39
     //player colour is 99e550
-    public Color32 wallsColour, playerColour, floorColour;
-    public GameObject floorPrefab, wallPrefab, playerPrefab;
+    //skeleton colour is ff0000
+    //cacodemon colour is c97c7c
+    public Color32 wallsColour, playerColour, floorColour, skeletonColour, cacodemonColour;
+    public GameObject floorPrefab, wallPrefab, playerPrefab, skeletonPrefab, cacodemonPrefab;
 
     private byte[,] levelData;
 
     public GameObject player;
 
+    NavMeshSurface surface;
+
     private void Start()
     {
         levelData = new byte[levelPlan.width, levelPlan.height];
+        surface = GetComponent<NavMeshSurface>();
         GenerateLevelData();
         BuildLevel();
     }
@@ -36,6 +42,14 @@ public class LevelGenerator : MonoBehaviour
                 else if (data.Equals(playerColour))
                 {
                     levelData[x, y] = 100;
+                }
+                else if (data.Equals(skeletonColour))
+                {
+                    levelData[x, y] = 201;
+                }
+                else if (data.Equals(cacodemonColour))
+                {
+                    levelData[x, y] = 202;
                 }
             }
         }
@@ -62,24 +76,35 @@ public class LevelGenerator : MonoBehaviour
                     case 0:
                         break;
 
-                    case 1:
+                    case 1: //Spawning the floors
                         Instantiate(floorPrefab, new Vector3(x * 3, -1.5f, y * 3), Quaternion.identity);
                         Instantiate(floorPrefab, new Vector3(x * 3, +4f, y * 3), Quaternion.identity);
                         break;
 
-                    case 2:
+                    case 2: //Spawning the walls
                         Instantiate(wallPrefab, new Vector3(x * 3, 0, y * 3), Quaternion.identity);
                         break;
 
                     case 100:
-                        //Instantiate(playerPrefab, new Vector3(x * 3 - 1.5f, 0, y * 3 - 1.5f), Quaternion.identity);
-                        player.transform.position = new Vector3(x * 3 - 1.5f, 0, y * 3 - 1.5f);
+                        player.transform.position = new Vector3(x * 3, 0, y * 3);
                         Instantiate(floorPrefab, new Vector3(x * 3, -1.5f, y * 3), Quaternion.identity);
-                        Instantiate(floorPrefab, new Vector3(x * 3, +4.5f, y * 3), Quaternion.identity);
+                        Instantiate(floorPrefab, new Vector3(x * 3, +4f, y * 3), Quaternion.identity);
+                        break;
+                    case 201: //Spawning the skeleton
+                        Instantiate(skeletonPrefab, new Vector3(x * 3, 0, y * 3), Quaternion.identity);
+                        Instantiate(floorPrefab, new Vector3(x * 3, -1.5f, y * 3), Quaternion.identity);
+                        Instantiate(floorPrefab, new Vector3(x * 3, +4f, y * 3), Quaternion.identity);
+                        break;
+                    case 202://Spawning the cacodemon
+                        Instantiate(cacodemonPrefab, new Vector3(x * 3, 0, y * 3), Quaternion.identity);
+                        Instantiate(floorPrefab, new Vector3(x * 3, -1.5f, y * 3), Quaternion.identity);
+                        Instantiate(floorPrefab, new Vector3(x * 3, +4f, y * 3), Quaternion.identity);
                         break;
                 }
             }
         }
+
+        BuildNavMesh();
     }
 
     bool IsNearWall(byte x, byte y)
@@ -93,5 +118,10 @@ public class LevelGenerator : MonoBehaviour
         if (y < levelPlan.height - 1 && levelData[x, y + 1] != 0)
             return true;
         return false;
+    }
+
+    void BuildNavMesh() 
+    { 
+        surface.BuildNavMesh(); 
     }
 }
