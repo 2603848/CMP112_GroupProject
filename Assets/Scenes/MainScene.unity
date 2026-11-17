@@ -894,7 +894,19 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3247363319203463300, guid: daa0c85fa4385734c80a149b06fdb067, type: 3}
+      propertyPath: Ammo
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247363319203463300, guid: daa0c85fa4385734c80a149b06fdb067, type: 3}
       propertyPath: MaxAmmo
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247363319203463300, guid: daa0c85fa4385734c80a149b06fdb067, type: 3}
+      propertyPath: HitscanDamage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247363319203463300, guid: daa0c85fa4385734c80a149b06fdb067, type: 3}
+      propertyPath: HitscanMaxDist
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4937116726635331695, guid: daa0c85fa4385734c80a149b06fdb067, type: 3}
@@ -936,6 +948,14 @@ PrefabInstance:
     - target: {fileID: 4937116726635331695, guid: daa0c85fa4385734c80a149b06fdb067, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277729317939390428, guid: daa0c85fa4385734c80a149b06fdb067, type: 3}
+      propertyPath: HitscanDamage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277729317939390428, guid: daa0c85fa4385734c80a149b06fdb067, type: 3}
+      propertyPath: HitscanMaxDist
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

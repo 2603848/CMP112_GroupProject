@@ -1,6 +1,5 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Profiling.HierarchyFrameDataView;
 
 public abstract class Weapon : MonoBehaviour
 {
