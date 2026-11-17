@@ -893,6 +893,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3247363319203463300, guid: daa0c85fa4385734c80a149b06fdb067, type: 3}
+      propertyPath: MaxAmmo
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4937116726635331695, guid: daa0c85fa4385734c80a149b06fdb067, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1212,7 +1216,7 @@ MonoBehaviour:
   floorPrefab: {fileID: 4328779444041446517, guid: cbd231b0f0137684b8ff73bff3f56f35, type: 3}
   wallPrefab: {fileID: 128222471113193296, guid: d33731f984a0769408ec040bf76ac718, type: 3}
   playerPrefab: {fileID: 540198180688028257, guid: daa0c85fa4385734c80a149b06fdb067, type: 3}
-  skeletonPrefab: {fileID: 21582160609987139, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
+  skeletonPrefab: {fileID: 1262501883505552790, guid: 49503bd109c3caa4aac5a60c33103649, type: 3}
   cacodemonPrefab: {fileID: 21582160609987139, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
   player: {fileID: 1081252744}
 --- !u!4 &1698906131

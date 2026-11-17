@@ -1,4 +1,3 @@
-#region Eren Coded This part
 using System.Collections;
 using UnityEngine;
 
@@ -109,4 +108,3 @@ public class PlayerMovement : MonoBehaviour
     }
     #endregion
 }
-#endregion
