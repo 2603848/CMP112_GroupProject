@@ -64,7 +64,7 @@ public class LevelGenerator : MonoBehaviour
 
                     case 1:
                         Instantiate(floorPrefab, new Vector3(x * 3, -1.5f, y * 3), Quaternion.identity);
-                        Instantiate(floorPrefab, new Vector3(x * 3, +4.5f, y * 3), Quaternion.identity);
+                        Instantiate(floorPrefab, new Vector3(x * 3, +4f, y * 3), Quaternion.identity);
                         break;
 
                     case 2:
