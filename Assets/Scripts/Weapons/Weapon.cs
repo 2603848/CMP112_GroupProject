@@ -63,7 +63,15 @@ public abstract class Weapon : MonoBehaviour
                     IHasHealth health = collided.GetComponent<IHasHealth>();
                     if (health != null)
                     {
-                        health.Damage(HitscanDamage, this.transform.parent.parent.gameObject);
+                        // Hacky solution but no time to rework this in the prefabs
+                        // get the parent, if the parent isn't the enemy then move up another level 
+                        // the second one is for the Player, the first one should work with Enemies
+                        GameObject parent = this.transform.parent.gameObject;
+                        if (parent.GetComponent<Enemy>() == null && parent.GetComponent<PlayerMovement>() == null)
+                        {
+                            parent = parent.transform.parent.gameObject;
+                        }
+                        health.Damage(HitscanDamage, parent);
                     }
                 }
             }
