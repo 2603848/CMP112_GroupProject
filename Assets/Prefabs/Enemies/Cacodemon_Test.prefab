@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21582160609987139}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9896062, z: 0, w: 0.1438043}
-  m_LocalPosition: {x: -29.21, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Movespeed: 5
-  Range: 60
+  Range: 20
   spriteRenderer: {fileID: 4549180381726745622}
   agent: {fileID: 5870621177824201011}
   enemyAnimator: {fileID: 2832107116557497639}
@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54f8e3aa2b122646bf58415e87c1543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetFinder
-  MaxSearchDistance: 30
-  TargetDistanceFromTarget: 20
+  MaxSearchDistance: 10
+  TargetDistanceFromTarget: 6
 --- !u!143 &2150058058899637816
 CharacterController:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!135 &8008115004025910692
@@ -167,13 +167,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2527760531984040676}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9896062, z: -0, w: 0.1438043}
-  m_LocalPosition: {x: 0.62, y: 6.17, z: 0}
-  m_LocalScale: {x: 18.942778, y: 18.942778, z: 18.942778}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.493, z: 0}
+  m_LocalScale: {x: 5.04, y: 5.04, z: 5.04}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 795907741773836373}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -163.8, z: 0}
 --- !u!212 &4549180381726745622
 SpriteRenderer:
   serializedVersion: 3
@@ -308,7 +308,7 @@ Transform:
   m_GameObject: {fileID: 5996158733989209962}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 5.23, z: -3.26}
+  m_LocalPosition: {x: 0, y: 0.472, z: 0}
   m_LocalScale: {x: 0.99999964, y: 1, z: 0.99999964}
   m_ConstrainProportionsScale: 0
   m_Children: []

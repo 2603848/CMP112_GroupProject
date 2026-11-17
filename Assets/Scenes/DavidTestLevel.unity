@@ -1095,7 +1095,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Shotgun
   Ammo: 10
   MaxAmmo: 10
-  ReloadTime: 1
   WeaponCD: 1
   Viewmodel: {fileID: 0}
   IsHitscan: 0
@@ -1105,6 +1104,9 @@ MonoBehaviour:
     m_Bits: 0
   HitscanDamage: 10
   BulletPrefab: {fileID: 0}
+  BulletSpawnPoint: {fileID: 0}
+  UsesAmmo: 1
+  ammoType: 1
 --- !u!1 &1477835058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,42 +1270,6 @@ PrefabInstance:
     - target: {fileID: 795907741773836373, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1658333315187312607, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 11.290209
-      objectReference: {fileID: 0}
-    - target: {fileID: 1658333315187312607, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 11.290209
-      objectReference: {fileID: 0}
-    - target: {fileID: 1658333315187312607, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 11.290209
-      objectReference: {fileID: 0}
-    - target: {fileID: 1658333315187312607, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.108e-12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1658333315187312607, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3109400229597609725, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
-      propertyPath: Range
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7541380898250598792, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
-      propertyPath: Ammo
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8286559309676132933, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.1438043
-      objectReference: {fileID: 0}
-    - target: {fileID: 8286559309676132933, guid: d22a734d39e1e3344aef7dfe619c3db8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.9896062
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
